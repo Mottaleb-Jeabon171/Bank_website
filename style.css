@@ -1,0 +1,42 @@
+body{
+    padding:100px;
+}
+.login h1{
+    text-align: center;
+}
+.form-control:focus{
+    
+    font-size:22px ;
+    color: black;
+   
+}
+#transation-area{
+    display: none;
+}
+.deposite{
+    background-color:slateblue;
+  
+}
+.withdraw{
+    background-color: orange;
+    
+}
+.balance{
+    background-color: lightsalmon;
+   
+}
+.status{
+    margin: 0 20px;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+.submit-area{
+   margin-top: 50px;
+   margin-left: 20px;
+   /* margin-right: 20px; */
+   padding: 40px;
+   border-radius: 10px;
+   box-shadow: 5px 5px 10px grey;
+
+}
