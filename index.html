@@ -25,7 +25,7 @@
         <div class="col-md-4">
         <div class="deposite status">
         <h3>Deposit</h3>
-        <h4>$00</h4>
+        <h4>$ <span id="currentDepo">00</span>  </h4>
     </div>
         </div>
         <div class="col-md-4">
@@ -45,15 +45,15 @@
             <div class="col-md-6">
                 <div class="depo submit-area">
               <h3>Deposit</h3>
-              <input type="text" class="form-control">
+              <input type="text" class="form-control" placeholder="$amount you want to deposite" id="depoValue">
               <br>
-              <button class="btn btn-primary">Deposite>></button>
+              <button class="btn btn-primary" id="depositeButton">Deposite>></button>
             </div>
             </div>
             <div class="col-md-6">
                 <div class="withd submit-area">
                <h3>Withdraw</h3> 
-               <input type="text" class="form-control" >
+               <input type="text" class="form-control" placeholder="$amount you want to withdraw" >
                <br>
                <button class="btn btn-primary">Withdraw>></button>
             </div>
@@ -65,12 +65,27 @@
   
 
   <script>
+    //  event handler for enter 
     const buttonClick = document.getElementById("butt").addEventListener("click", function(){
       const login = document.getElementById("login").style.display="none";
-      const secondSection = document.getElementById("transation-area").style.display="block";
-       
-        
+      const secondSection = document.getElementById("transation-area").style.display="block";    
     })
+
+    const depositeClick = document.getElementById("depositeButton").addEventListener("click", function(){
+        // console.log("button is clicked");
+        const depositeAmount = document.getElementById("depoValue").value;
+        const totalDeposite = parseFloat(depositeAmount);
+       
+       const currentAmount = document.getElementById("currentDepo").innerText;
+       const totalCurrent = parseFloat(currentAmount);
+
+       const totalAmount = totalDeposite + totalCurrent;
+
+       document.getElementById("currentDepo").innerText= totalAmount;
+       document.getElementById("depoValue").value="";
+    })
+
+
   </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
